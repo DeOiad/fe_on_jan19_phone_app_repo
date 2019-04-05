@@ -1,4 +1,5 @@
-import PhonesCatalog from './components/phones-catalog.js'
+import PhonesCatalog from './components/phones-catalog.js';
+import PhonesService from './services/phones-service.js';
 
 export default class PhonesPage {
   constructor({ element }) {
@@ -6,7 +7,8 @@ export default class PhonesPage {
     this._render();
 
     this._catalog = new PhonesCatalog({
-      element: this._element.querySelector('[data-phone-catalog]')
+      element: this._element.querySelector('[data-phone-catalog]'),
+      phones: PhonesService.getAll()
     })
   }
 
