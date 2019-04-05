@@ -1,10 +1,8 @@
 import PhonesCatalog from './components/phones-catalog.js'
 
 export default class PhonesPage {
-  constructor({
-    element
-  }) {
-    this.element = element;
+  constructor({ element }) {
+    this._element = element;
     this._render();
 
     this._catalog = new PhonesCatalog({
@@ -13,7 +11,7 @@ export default class PhonesPage {
   }
 
   _render() {
-    this.element.innerHTML = `
+    this._element.innerHTML = `
         <div class="row">
 
         <!--Sidebar-->
@@ -47,8 +45,6 @@ export default class PhonesPage {
         <div class="col-md-10">
           <div data-phone-catalog></div>  
         </div>
-      </div>
-        
-        `
+        </div>`
   }
 }
