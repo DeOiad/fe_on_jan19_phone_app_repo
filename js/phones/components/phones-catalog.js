@@ -8,14 +8,11 @@ export default class PhonesCatalog extends Component {
     }) {
         super({ element });
         this._phones = phones;
-        this._render();
         this.onPhoneSelected = onPhoneSelected;
+        this._render();
 
-        this._element.addEventListener('click', (event) => {
+        this.on('click', '[data-element="details-link"]', (event) => {
             const phoneEl = event.target.closest('[data-element="phone-element"]');
-            if (!phoneEl) {
-                return;
-            }
             const phoneId = phoneEl.dataset.phoneId;
             this.onPhoneSelected(phoneId);
         })
@@ -27,17 +24,24 @@ export default class PhonesCatalog extends Component {
             ${
                 this._phones.map(phone => `
                     <li class="thumbnail" data-element="phone-element" data-phone-id=${phone.id}>
-                    <a href="#!/phones/motorola-xoom-with-wi-fi" class="thumb">
-                        <img alt="Motorola XOOM™ with Wi-Fi" src="${phone.imageUrl}">
+                    <a 
+                    href="#!/phones/motorola-xoom-with-wi-fi" 
+                    class="thumb"
+                    data-element="details-link"
+                    >
+                    <img alt="${phone.name}" src="${phone.imageUrl}">
                     </a>
 
                     <div class="phones__btn-buy-wrapper">
-                        <a class="btn btn-success">
+                    <a class="btn btn-success">
                         Add
-                        </a>
+                    </a>
                     </div>
 
-                    <a href="#!/phones/motorola-xoom-with-wi-fi">${phone.name}</a>
+                    <a 
+                    href="#!/phones/motorola-xoom-with-wi-fi"
+                    data-element="details-link"
+                    >${phone.name}</a>
                     <p>${phone.snippet}</p>
                     </li>
                 `).join('')
