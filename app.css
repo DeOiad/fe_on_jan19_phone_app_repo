@@ -2,7 +2,11 @@
 
 body {
   padding-top: 20px;
-  background-color: lightgoldenrodyellow;
+  background-color: rgb(20, 141, 221);
+}
+
+.container-fluid {
+  max-width: 1200px;
 }
 
 .phone-images {
@@ -103,5 +107,14 @@ ul.specs dt {
 }
 
 h1 {
-  border-bottom: 1px solid gray;
+  text-align: center;
+  color: white;
+}
+
+p {
+  text-align: left;
+}
+
+a.btn.btn-success {
+  background-color: green;
 }
