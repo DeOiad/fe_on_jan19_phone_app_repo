@@ -2,7 +2,8 @@
 
 body {
   padding-top: 20px;
-  background-color: rgb(20, 141, 221);
+  background-color: RGB(107, 186, 212);
+  font-family: 'Raleway', sans-serif;
 }
 
 .container-fluid {
@@ -116,5 +117,10 @@ p {
 }
 
 a.btn.btn-success {
-  background-color: green;
+  background-color: RGB(176, 179, 129);
+}
+
+a {
+  color: RGB(219, 158, 185);
+  font-weight: bold;
 }
