@@ -118,6 +118,7 @@ p {
 
 a.btn.btn-success {
   background-color: RGB(176, 179, 129);
+  border: none;
 }
 
 a {
